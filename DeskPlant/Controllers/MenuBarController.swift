@@ -20,9 +20,13 @@ class MenuBarController: ObservableObject {
         startUpdatingIcon()
         observeNotifications()
         
-        // Otomatik olarak popover'ı göster (first launch veya her zaman)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.showPopover()
+        // Sadece ilk kez başlatıldığında otomatik aç
+        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+        if !hasLaunchedBefore {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                self?.showPopover()
+            }
+            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
         }
     }
 
@@ -41,7 +45,8 @@ class MenuBarController: ObservableObject {
     private func setupPopover() {
         popover = NSPopover()
         popover?.contentSize = NSSize(width: 320, height: 490)
-        popover?.behavior = .transient
+        popover?.behavior = .transient  // Ekrana tıklayınca otomatik kapanır
+        popover?.animates = true
         popover?.contentViewController = NSHostingController(
             rootView: PopoverView(
                 timer: pomodoroTimer,
@@ -104,11 +109,15 @@ class MenuBarController: ObservableObject {
     }
 
     @objc private func showPopover() {
-        if let button = statusItem?.button {
-            popover?.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
-
-            // Bring app to front
-            NSApp.activate(ignoringOtherApps: true)
+        if let button = statusItem?.button, let popover = popover {
+            // Eğer zaten gösteriliyorsa, kapat
+            if popover.isShown {
+                closePopover()
+            } else {
+                // Behavior'ı her gösterimde .transient yap (dışarı tıklayınca kapansın)
+                popover.behavior = .transient
+                popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
+            }
         }
     }
 

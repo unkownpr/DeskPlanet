@@ -203,9 +203,19 @@ class LicenseManager: ObservableObject {
         
         let activationResponse = try decoder.decode(LicenseActivationResponse.self, from: data)
         
-        // Check for errors
+        // Check for errors - This must be checked FIRST
         if let error = activationResponse.error {
-            throw LicenseError.apiError(error)
+            // Check for specific error types
+            if error.contains("activation limit") {
+                throw LicenseError.activationLimitReached
+            } else {
+                throw LicenseError.apiError(error)
+            }
+        }
+        
+        // Check if activated successfully
+        guard activationResponse.activated else {
+            throw LicenseError.activationFailed
         }
         
         // Validate product and store
@@ -217,11 +227,6 @@ class LicenseManager: ObservableObject {
         // Validate email
         guard activationResponse.meta.customerEmail.lowercased() == email.lowercased() else {
             throw LicenseError.emailMismatch
-        }
-        
-        // Check if activated successfully
-        guard activationResponse.activated else {
-            throw LicenseError.activationFailed
         }
         
         // Save license
@@ -356,6 +361,7 @@ enum LicenseError: LocalizedError {
     case invalidProduct
     case emailMismatch
     case activationFailed
+    case activationLimitReached
     case invalidLicense
     case licenseNotActive(String)
     case noLicenseStored
@@ -376,6 +382,8 @@ enum LicenseError: LocalizedError {
             return "license.error.emailMismatch".localized
         case .activationFailed:
             return "license.error.activationFailed".localized
+        case .activationLimitReached:
+            return "license.error.activationLimit".localized
         case .invalidLicense:
             return "license.error.invalidLicense".localized
         case .licenseNotActive(let status):

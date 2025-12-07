@@ -179,6 +179,7 @@
 "license.error.invalidProduct" = "Bu lisans anahtarı DeskPlant için geçerli değil";
 "license.error.emailMismatch" = "E-posta satın alma e-postası ile eşleşmiyor";
 "license.error.activationFailed" = "Lisans aktivasyonu başarısız";
+"license.error.activationLimit" = "Bu lisans anahtarı aktivasyon limitine ulaştı. Lütfen başka bir cihazda LemonSqueezy panosu üzerinden devre dışı bırakın veya destek ile iletişime geçin.";
 "license.error.invalidLicense" = "Lisans anahtarı geçersiz";
 "license.error.notActive" = "Lisans durumu: %@";
 "license.error.noLicense" = "Kayıtlı lisans yok";

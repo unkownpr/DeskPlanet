@@ -73,8 +73,8 @@ struct TabButton: View {
             Text(title)
                 .font(.system(size: 13, weight: isSelected ? .semibold : .regular))
                 .foregroundColor(isSelected ? .primary : .secondary)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 8)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .contentShape(Rectangle())  // Tüm alan tıklanabilir
                 .background(isSelected ? Color.accentColor.opacity(0.1) : Color.clear)
         }
         .buttonStyle(PlainButtonStyle())

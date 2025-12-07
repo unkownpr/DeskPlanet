@@ -30,6 +30,7 @@
 "license.error.invalidProduct" = "Dieser Lizenzschlüssel ist nicht gültig für DeskPlant";
 "license.error.emailMismatch" = "E-Mail stimmt nicht mit der Kauf-E-Mail überein";
 "license.error.activationFailed" = "Lizenzaktivierung fehlgeschlagen";
+"license.error.activationLimit" = "Dieser Lizenzschlüssel hat das Aktivierungslimit erreicht. Bitte deaktivieren Sie ihn auf einem anderen Gerät über das LemonSqueezy-Dashboard oder wenden Sie sich an den Support.";
 "license.error.invalidLicense" = "Lizenzschlüssel ist ungültig";
 "license.error.notActive" = "Lizenzstatus: %@";
 "license.error.noLicense" = "Keine Lizenz gespeichert";
