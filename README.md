@@ -16,6 +16,24 @@
 
 **DeskPlant** is a macOS menu bar application that combines the proven Pomodoro technique with the joy of growing a digital plant. Stay focused, take breaks, and watch your plant thrive as you complete work sessions!
 
+### 💎 Freemium Model
+
+DeskPlant is **free to use** with basic features. Unlock premium features with a **lifetime license**!
+
+**[🛒 Get Lifetime License - ₺299.99](https://eshop.ssilistre.dev/buy/5399c73c-21b1-40df-b841-f823d5a20a98)**
+
+**Free Features:**
+- ✅ Basic Pomodoro Timer (25-5-15)
+- ✅ Single Plant Type
+- ✅ Basic Statistics
+
+**Premium Features (Lifetime License):**
+- 🌟 All Plant Types (Bonsai, Cactus, Bamboo, and more)
+- 🌟 Advanced Statistics & Analytics
+- 🌟 Custom Timer Settings
+- 🌟 Unlimited Plant Growth
+- 🌟 Priority Support
+
 ### ✨ Key Features
 
 - **🎯 Pomodoro Timer**: Classic 25-5-15 minute intervals

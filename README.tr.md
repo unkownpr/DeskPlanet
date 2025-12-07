@@ -16,6 +16,24 @@
 
 **DeskPlant**, kanıtlanmış Pomodoro tekniğini dijital bitki büyütme keyfi ile birleştiren bir macOS menü çubuğu uygulamasıdır. Odaklanın, mola verin ve çalışma seanslarınızı tamamladıkça bitkinin gelişmesini izleyin!
 
+### 💎 Freemium Model
+
+DeskPlant **ücretsiz** olarak temel özelliklerle kullanılabilir. Premium özelliklerin kilidini **ömür boyu lisans** ile açın!
+
+**[🛒 Ömür Boyu Lisans Satın Al - ₺299.99](https://eshop.ssilistre.dev/buy/5399c73c-21b1-40df-b841-f823d5a20a98)**
+
+**Ücretsiz Özellikler:**
+- ✅ Temel Pomodoro Zamanlayıcı (25-5-15)
+- ✅ Tek Bitki Türü
+- ✅ Temel İstatistikler
+
+**Premium Özellikler (Ömür Boyu Lisans):**
+- 🌟 Tüm Bitki Türleri (Bonzai, Kaktüs, Bambu ve daha fazlası)
+- 🌟 Gelişmiş İstatistikler ve Analizler
+- 🌟 Özel Zamanlayıcı Ayarları
+- 🌟 Sınırsız Bitki Büyümesi
+- 🌟 Öncelikli Destek
+
 ### ✨ Temel Özellikler
 
 - **🎯 Pomodoro Zamanlayıcı**: Klasik 25-5-15 dakikalık aralıklar
