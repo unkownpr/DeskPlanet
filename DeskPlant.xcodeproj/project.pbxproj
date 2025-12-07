@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBA236521D964D0AA897538C /* LicenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D998B609FA71412B9B36FC6D /* LicenseManager.swift */; };
+		21073A8CAA1C47728F5E31E3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D827918EE4A4C8F3A6945 /* NetworkService.swift */; };
+		A10001 /* DeskPlantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000; };
+		A10003 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10002; };
+		A10005 /* PomodoroTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10004; };
+		A10007 /* PlantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10006; };
+		A10009 /* PlantState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10008; };
+		A10011 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10010; };
+		A10013 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10012; };
+		A10015 /* PlantAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10014; };
+		70F8B97085B74EEFB2EB9B85 /* LicenseActivationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D28E27BB3649F388BF90D0 /* LicenseActivationSheet.swift */; };
+		A10017 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10016; };
+		A10019 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10018; };
+		A10021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10020; };
+		A10023 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10022; };
+		A10027 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10026; };
+		A10028 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10029; };
+		A10034 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10035; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D998B609FA71412B9B36FC6D /* LicenseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseManager.swift; sourceTree = "<group>"; };
+		041D827918EE4A4C8F3A6945 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A00000 /* DeskPlant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeskPlant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000 /* DeskPlantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskPlantApp.swift; sourceTree = "<group>"; };
+		A10002 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
+		A10004 /* PomodoroTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimer.swift; sourceTree = "<group>"; };
+		A10006 /* PlantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantType.swift; sourceTree = "<group>"; };
+		A10008 /* PlantState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantState.swift; sourceTree = "<group>"; };
+		A10010 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		A10012 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		A10014 /* PlantAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantAnimationView.swift; sourceTree = "<group>"; };
+		A6D28E27BB3649F388BF90D0 /* LicenseActivationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseActivationSheet.swift; sourceTree = "<group>"; };
+		A10016 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A10018 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A10020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A10022 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A10024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10025 /* DeskPlant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeskPlant.entitlements; sourceTree = "<group>"; };
+		A10026 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		A10030 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10031 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10032 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10033 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10035 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXVariantGroup section */
+		A10029 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A10030 /* en */,
+				A10031 /* tr */,
+				A10032 /* fr */,
+				A10033 /* de */,
+			);
+			name = Localizable.strings;
+			path = DeskPlant/Resources/Localization;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA236521D964D0AA897538C /* LicenseManager.swift in Sources */,
+				21073A8CAA1C47728F5E31E3 /* NetworkService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00002 = {
+			isa = PBXGroup;
+			children = (
+				A00003 /* DeskPlant */,
+				A00004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00003 /* DeskPlant */ = {
+			isa = PBXGroup;
+			children = (
+				A10000 /* DeskPlantApp.swift */,
+				A00005 /* Controllers */,
+				A00006 /* Models */,
+				A00007 /* Views */,
+				A00008 /* Utils */,
+				A00009 /* Resources */,
+				A10024 /* Info.plist */,
+				A10025 /* DeskPlant.entitlements */,
+			);
+			path = DeskPlant;
+			sourceTree = "<group>";
+		};
+		A00004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00000 /* DeskPlant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A00005 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A10002 /* MenuBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A00006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A10004 /* PomodoroTimer.swift */,
+				A10006 /* PlantType.swift */,
+				A10008 /* PlantState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A00007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A10010 /* PopoverView.swift */,
+				A6D28E27BB3649F388BF90D0 /* LicenseActivationSheet.swift */,
+				A10012 /* StatsView.swift */,
+				A10014 /* PlantAnimationView.swift */,
+				A10022 /* OnboardingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A00008 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				041D827918EE4A4C8F3A6945 /* NetworkService.swift */,
+				D998B609FA71412B9B36FC6D /* LicenseManager.swift */,
+				A10016 /* NotificationManager.swift */,
+				A10018 /* DataManager.swift */,
+				A10026 /* LocalizationManager.swift */,
+				A10035 /* LaunchAtLogin.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A00009 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A10020 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00010 /* DeskPlant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00011 /* Build configuration list for PBXNativeTarget "DeskPlant" */;
+			buildPhases = (
+				A00012 /* Sources */,
+				A00001 /* Frameworks */,
+				A00013 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeskPlant;
+			productName = DeskPlant;
+			productReference = A00000 /* DeskPlant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00014 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A00010 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A00015 /* Build configuration list for PBXProject "DeskPlant" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A00002;
+			productRefGroup = A00004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00010 /* DeskPlant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A00013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10021 /* Assets.xcassets in Resources */,
+				A10028 /* Localizable.strings in Resources */,
+				EBA236521D964D0AA897538C /* LicenseManager.swift in Sources */,
+				21073A8CAA1C47728F5E31E3 /* NetworkService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00012 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10001 /* DeskPlantApp.swift in Sources */,
+				A10003 /* MenuBarController.swift in Sources */,
+				A10005 /* PomodoroTimer.swift in Sources */,
+				A10007 /* PlantType.swift in Sources */,
+				A10009 /* PlantState.swift in Sources */,
+				A10011 /* PopoverView.swift in Sources */,
+				A10013 /* StatsView.swift in Sources */,
+				A10015 /* PlantAnimationView.swift in Sources */,
+				70F8B97085B74EEFB2EB9B85 /* LicenseActivationSheet.swift in Sources */,
+				A10017 /* NotificationManager.swift in Sources */,
+				A10019 /* DataManager.swift in Sources */,
+				A10023 /* OnboardingView.swift in Sources */,
+				A10027 /* LocalizationManager.swift in Sources */,
+				A10034 /* LaunchAtLogin.swift in Sources */,
+				EBA236521D964D0AA897538C /* LicenseManager.swift in Sources */,
+				21073A8CAA1C47728F5E31E3 /* NetworkService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A00016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A00017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		A00018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DeskPlant/DeskPlant.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DeskPlant/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deskplant.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A00019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DeskPlant/DeskPlant.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DeskPlant/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deskplant.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00011 /* Build configuration list for PBXNativeTarget "DeskPlant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00018 /* Debug */,
+				A00019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00015 /* Build configuration list for PBXProject "DeskPlant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00016 /* Debug */,
+				A00017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00014 /* Project object */;
+}

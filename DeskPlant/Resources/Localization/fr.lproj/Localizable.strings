@@ -1,0 +1,187 @@
+/* French Localization for DeskPlant */
+
+/* Tab Names */
+"tab.plant" = "Plante";
+"tab.stats" = "Statistiques";
+"tab.settings" = "Paramètres";
+
+/* Plant View */
+"plant.health" = "Santé";
+"plant.level" = "Niveau";
+"plant.sessions" = "Sessions";
+"plant.status.thriving" = "Prospère";
+"plant.status.healthy" = "En bonne santé";
+"plant.status.needsCare" = "Besoin de soins";
+"plant.status.wilting" = "Flétrissement";
+"plant.status.critical" = "Critique";
+
+/* Timer States */
+"timer.readyToFocus" = "Prêt à se concentrer";
+"timer.focusTime" = "Temps de concentration - Votre plante pousse";
+"timer.breakTime" = "Temps de pause - Reposez-vous bien";
+"timer.paused" = "En pause";
+
+/* Buttons */
+"button.startFocus" = "Commencer la concentration";
+"button.pause" = "Pause";
+"button.resume" = "Reprendre";
+"button.stop" = "Arrêter";
+"button.skip" = "Passer";
+"button.quit" = "Quitter DeskPlant";
+
+/* Notifications */
+"notification.workComplete.title" = "Session de travail terminée!";
+"notification.workComplete.body" = "Excellent travail! C'est l'heure d'une %@ pause.";
+"notification.breakComplete.title" = "Pause terminée!";
+"notification.breakComplete.body" = "Prêt à se concentrer à nouveau?";
+"notification.sessionSkipped.title" = "Session ignorée";
+"notification.sessionSkipped.body" = "Terminez des sessions complètes pour arroser votre plante!";
+"notification.break.short" = "courte";
+"notification.break.long" = "longue";
+
+/* Settings */
+"settings.choosePlant" = "Choisissez votre plante";
+"settings.timerSettings" = "Paramètres du minuteur";
+"settings.workDuration" = "Durée de travail";
+"settings.shortBreak" = "Pause courte";
+"settings.longBreak" = "Pause longue";
+"settings.language" = "Langue";
+"settings.launchAtLogin" = "Lancer au démarrage";
+"settings.howToUse" = "Comment utiliser?";
+"settings.about" = "À propos de DeskPlant";
+"settings.version" = "Version 1.0.0";
+"settings.description" = "Augmentez votre productivité avec la technique Pomodoro tout en cultivant une plante numérique. Concentrez-vous, faites des pauses et regardez votre plante prospérer!";
+
+/* Plant Types */
+"plant.type.bonsai" = "Bonsaï";
+"plant.type.cactus" = "Cactus";
+"plant.type.bamboo" = "Bambou";
+"plant.type.sunflower" = "Tournesol";
+"plant.type.sakura" = "Sakura";
+"plant.type.monstera" = "Monstera";
+
+/* Plant Descriptions */
+"plant.description.bonsai" = "Patient et sage, grandit lentement avec dévouement";
+"plant.description.cactus" = "Survivant résilient, prospère avec des soins constants";
+"plant.description.bamboo" = "Flexible et fort, grandit rapidement avec concentration";
+"plant.description.sunflower" = "Lumineux et optimiste, nécessite une attention régulière";
+"plant.description.sakura" = "Délicat et beau, nécessite des soins doux";
+"plant.description.monstera" = "Tropical et vibrant, prospère avec équilibre";
+
+/* Onboarding */
+"onboarding.welcome.title" = "Bienvenue!";
+"onboarding.welcome.description" = "Cultivez une plante numérique tout en restant concentré avec DeskPlant. Travaillez avec la technique Pomodoro et regardez votre plante prospérer!";
+
+"onboarding.focus.title" = "Temps de concentration";
+"onboarding.focus.description" = "Terminez une session de concentration de 25 minutes pour donner +10 de santé à votre plante. Passez au niveau supérieur toutes les 5 sessions!";
+
+"onboarding.break.title" = "Temps de pause";
+"onboarding.break.description" = "Après chaque session, faites une courte pause (5min). Toutes les 4 sessions, profitez d'une longue pause (15min). Votre plante se repose avec vous!";
+
+"onboarding.care.title" = "Soins des plantes";
+"onboarding.care.description" = "Si vous n'utilisez pas l'application pendant plus de 4 heures, la santé de votre plante diminuera. Concentrez-vous régulièrement pour garder votre plante en bonne santé!";
+
+"onboarding.types.title" = "Choisissez votre plante";
+"onboarding.types.description" = "Chaque plante a des caractéristiques uniques. Choisissez celle qui correspond à votre style!";
+
+/* Onboarding Plant Cards */
+"onboarding.plant.cactus" = "Le plus tolérant - Parfait pour les débutants";
+"onboarding.plant.monstera" = "Plante tropicale résistante - Bon équilibre";
+"onboarding.plant.bamboo" = "Croissance rapide - Soins modérés nécessaires";
+"onboarding.plant.bonsai" = "Croissance patiente - Nécessite du dévouement";
+"onboarding.plant.sunflower" = "Lumineux et joyeux - Nécessite des soins réguliers";
+"onboarding.plant.sakura" = "Le plus difficile - Pour les maîtres seulement";
+
+"onboarding.start.title" = "Commençons!";
+"onboarding.start.description" = "Cliquez sur l'icône de la plante dans la barre de menus, appuyez sur 'Commencer la concentration' et démarrez votre première session!";
+
+"onboarding.button.next" = "Suivant";
+"onboarding.button.back" = "Retour";
+"onboarding.button.start" = "Commencer!";
+
+/* Stats */
+"stats.today" = "Aujourd'hui";
+"stats.thisWeek" = "Cette semaine";
+"stats.pastDays" = "Jours passés";
+"stats.totalSessions" = "Sessions totales";
+"stats.totalMinutes" = "Minutes totales";
+"stats.totalTime" = "Temps total";
+"stats.focusTime" = "Temps de concentration";
+"stats.sessions" = "Sessions";
+"stats.currentStreak" = "Série actuelle";
+"stats.longestStreak" = "Plus longue série";
+"stats.sessionsCompleted" = "Sessions terminées";
+"stats.minutes" = "Minutes";
+"stats.days" = "jours";
+"stats.achievements" = "Réalisations";
+"stats.emptyMessage" = "Commencez votre première session de concentration!";
+
+/* Achievement Levels */
+"achievement.firstSteps" = "Premiers pas";
+"achievement.firstSteps.desc" = "Terminez 1 session";
+"achievement.gettingStarted" = "Débuts";
+"achievement.gettingStarted.desc" = "Terminez 5 sessions";
+"achievement.consistent" = "Constant";
+"achievement.consistent.desc" = "Terminez 25 sessions";
+"achievement.dedicated" = "Dévoué";
+"achievement.dedicated.desc" = "Terminez 100 sessions";
+
+/* Languages */
+"language.english" = "English";
+"language.turkish" = "Türkçe";
+"language.french" = "Français";
+"language.german" = "Deutsch";
+
+/* Units */
+"unit.min" = "min";
+"unit.session" = "session";
+"unit.sessions" = "sessions";
+
+/* Menu */
+"menu.open" = "Ouvrir DeskPlant";
+"menu.activateLicense" = "Activer la Licence";
+"menu.deactivateLicense" = "Désactiver la Licence";
+"menu.licenseInfo" = "Informations sur la Licence";
+
+/* License */
+"license.free" = "Gratuit";
+"license.pro" = "Pro";
+"license.status.notActivated" = "Non Activée";
+"license.status.active" = "Active";
+"license.status.expired" = "Expirée";
+"license.status.invalid" = "Invalide";
+"license.title" = "Licence";
+"license.activate" = "Activer la Licence";
+"license.deactivate" = "Désactiver la Licence";
+"license.email" = "E-mail";
+"license.key" = "Clé de Licence";
+"license.enterEmail" = "Entrez votre e-mail";
+"license.enterKey" = "Entrez votre clé de licence";
+"license.activateButton" = "Activer";
+"license.cancel" = "Annuler";
+"license.currentStatus" = "Statut Actuel";
+"license.type" = "Type de Licence";
+"license.activatedOn" = "Activée le";
+"license.upgradeMessage" = "Passez à Pro pour débloquer toutes les fonctionnalités";
+"license.features.title" = "Fonctionnalités Pro";
+"license.features.allPlants" = "Accès à tous les types de plantes";
+"license.features.customTimer" = "Personnaliser les réglages du minuteur";
+"license.features.fullStats" = "Statistiques complètes";
+"license.success" = "Licence activée avec succès!";
+"license.deactivateSuccess" = "Licence désactivée avec succès";
+"license.deactivateConfirm" = "Êtes-vous sûr de vouloir désactiver votre licence?";
+"license.restrictedFeature" = "Cette fonctionnalité nécessite une licence Pro";
+
+/* License Errors */
+"license.error.invalidEmail" = "Veuillez entrer une adresse e-mail valide";
+"license.error.invalidKey" = "Veuillez entrer une clé de licence valide";
+"license.error.notActivated" = "La licence n'est pas activée";
+"license.error.network" = "Erreur réseau. Veuillez vérifier votre connexion";
+"license.error.unknown" = "Une erreur inconnue s'est produite";
+
+/* Purchase */
+"license.purchase" = "Acheter une licence";
+"license.purchase.description" = "Obtenez DeskPlant Pro pour un accès à vie";
+"license.purchase.open" = "Ouvrir la boutique";
+"license.purchase.price" = "₺299.99 - Accès à vie";
+
