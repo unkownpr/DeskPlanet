@@ -199,8 +199,8 @@ struct LeafView: View {
                     .easeInOut(duration: 3.0 + Double(data.id % 3))
                     .repeatForever(autoreverses: true)
                 ) {
-                    rotation = Double.random(in: -15...15)
-                }
+                rotation = Double.random(in: -15...15)
+            }
             }
     }
     

@@ -160,8 +160,8 @@ class LicenseManager: ObservableObject {
         UserDefaults.standard.set(data, forKey: licenseKey)
         licenseInfo = license
         isLicensed = true
-    }
-    
+        }
+        
     // MARK: - Clear License
     private func clearLicense() {
         UserDefaults.standard.removeObject(forKey: licenseKey)
@@ -197,7 +197,18 @@ class LicenseManager: ObservableObject {
             throw LicenseError.invalidResponse
         }
         
-        guard httpResponse.statusCode == 200 else {
+        // Önce HTTP status code'u kontrol et
+        if httpResponse.statusCode != 200 {
+            // 404 genellikle yanlış email veya geçersiz lisans anahtarı demek
+            if httpResponse.statusCode == 404 {
+                // Response body'yi oku ve kontrol et
+                if let errorString = String(data: data, encoding: .utf8) {
+                    if errorString.contains("license key") || errorString.contains("email") {
+                        throw LicenseError.invalidLicenseOrEmail
+                    }
+                }
+                throw LicenseError.invalidLicenseOrEmail
+            }
             throw LicenseError.serverError(httpResponse.statusCode)
         }
         
@@ -208,7 +219,7 @@ class LicenseManager: ObservableObject {
             // Check for specific error types
             if error.contains("activation limit") {
                 throw LicenseError.activationLimitReached
-            } else {
+        } else {
                 throw LicenseError.apiError(error)
             }
         }
@@ -232,7 +243,7 @@ class LicenseManager: ObservableObject {
         // Save license
         let license = StoredLicense(
             key: key,
-            email: email,
+                email: email,
             instanceId: activationResponse.instance?.id ?? "",
             instanceName: hostname,
             activatedAt: Date()
@@ -273,9 +284,13 @@ class LicenseManager: ObservableObject {
             throw LicenseError.invalidResponse
         }
         
-        guard httpResponse.statusCode == 200 else {
+        // HTTP status code kontrol
+        if httpResponse.statusCode != 200 {
+            if httpResponse.statusCode == 404 {
+                throw LicenseError.invalidLicenseOrEmail
+            }
             throw LicenseError.serverError(httpResponse.statusCode)
-        }
+                }
         
         let validationResponse = try decoder.decode(LicenseValidationResponse.self, from: data)
         
@@ -309,13 +324,13 @@ class LicenseManager: ObservableObject {
                 clearLicense()
             }
             throw LicenseError.licenseNotActive(validationResponse.licenseKey.status)
-        }
-        
+                    }
+                    
         await MainActor.run {
             isLicensed = true
             lastError = nil
-        }
-    }
+                }
+            }
     
     // MARK: - Deactivate License (Local Only)
     func deactivateLicense() {
@@ -362,6 +377,7 @@ enum LicenseError: LocalizedError {
     case emailMismatch
     case activationFailed
     case activationLimitReached
+    case invalidLicenseOrEmail
     case invalidLicense
     case licenseNotActive(String)
     case noLicenseStored
@@ -384,6 +400,8 @@ enum LicenseError: LocalizedError {
             return "license.error.activationFailed".localized
         case .activationLimitReached:
             return "license.error.activationLimit".localized
+        case .invalidLicenseOrEmail:
+            return "license.error.invalidLicenseOrEmail".localized
         case .invalidLicense:
             return "license.error.invalidLicense".localized
         case .licenseNotActive(let status):

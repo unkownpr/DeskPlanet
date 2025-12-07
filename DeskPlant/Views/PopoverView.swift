@@ -89,10 +89,10 @@ struct MainPlantView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
-                // Plant animation
-                PlantAnimationView(plantState: plantState)
-                    .padding(.top, 20)
+        VStack(spacing: 20) {
+            // Plant animation
+            PlantAnimationView(plantState: plantState)
+                .padding(.top, 20)
 
             // Plant info
             VStack(spacing: 8) {
@@ -187,25 +187,25 @@ struct MainPlantView: View {
                     .foregroundColor(.secondary)
             }
 
-                // Control buttons
-                HStack(spacing: 12) {
-                    if timer.state == .idle {
+            // Control buttons
+            HStack(spacing: 12) {
+                if timer.state == .idle {
                         PrimaryButton(title: "button.startFocus".localized, icon: "play.fill") {
-                            timer.startWork()
-                        }
-                    } else if timer.state == .paused {
+                        timer.startWork()
+                    }
+                } else if timer.state == .paused {
                         SecondaryButton(title: "button.resume".localized, icon: "play.fill") {
-                            timer.resume()
-                        }
+                        timer.resume()
+                    }
                         SecondaryButton(title: "button.stop".localized, icon: "stop.fill") {
-                            timer.stop()
-                        }
-                    } else {
+                        timer.stop()
+                    }
+                } else {
                         SecondaryButton(title: "button.pause".localized, icon: "pause.fill") {
-                            timer.pause()
-                        }
+                        timer.pause()
+                    }
                         SecondaryButton(title: "button.skip".localized, icon: "forward.fill") {
-                            timer.skip()
+                        timer.skip()
                         }
                     }
                 }
@@ -353,8 +353,8 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
                         Text("settings.timerSettings".localized)
-                            .font(.headline)
-                        
+                        .font(.headline)
+
                         if !licenseManager.isPro {
                             Image(systemName: "lock.fill")
                                 .font(.caption)
@@ -363,31 +363,31 @@ struct SettingsView: View {
                     }
                     
                     if licenseManager.isPro {
-                        TimerSettingRow(
+                    TimerSettingRow(
                             title: "settings.workDuration".localized,
-                            value: Int(timer.workDuration / 60),
-                            range: 15...60,
+                        value: Int(timer.workDuration / 60),
+                        range: 15...60,
                             unit: "unit.min".localized
-                        ) { newValue in
-                            timer.workDuration = TimeInterval(newValue * 60)
-                        }
+                    ) { newValue in
+                        timer.workDuration = TimeInterval(newValue * 60)
+                    }
 
-                        TimerSettingRow(
+                    TimerSettingRow(
                             title: "settings.shortBreak".localized,
-                            value: Int(timer.breakDuration / 60),
-                            range: 3...15,
+                        value: Int(timer.breakDuration / 60),
+                        range: 3...15,
                             unit: "unit.min".localized
-                        ) { newValue in
-                            timer.breakDuration = TimeInterval(newValue * 60)
-                        }
+                    ) { newValue in
+                        timer.breakDuration = TimeInterval(newValue * 60)
+                    }
 
-                        TimerSettingRow(
+                    TimerSettingRow(
                             title: "settings.longBreak".localized,
-                            value: Int(timer.longBreakDuration / 60),
-                            range: 10...30,
+                        value: Int(timer.longBreakDuration / 60),
+                        range: 10...30,
                             unit: "unit.min".localized
-                        ) { newValue in
-                            timer.longBreakDuration = TimeInterval(newValue * 60)
+                    ) { newValue in
+                        timer.longBreakDuration = TimeInterval(newValue * 60)
                         }
                     } else {
                         // Show locked state
@@ -446,7 +446,7 @@ struct SettingsView: View {
                     }
                 }
                 .padding()
-                
+
                 Divider()
                 
                 // Tour button
@@ -779,8 +779,8 @@ struct LanguageSelector: View {
                 ForEach(Language.allCases) { language in
                     Text("\(language.flag) \(language.displayName)")
                         .tag(language)
-                }
-            }
+        }
+    }
             .pickerStyle(.menu)
             .frame(width: 150)
         }

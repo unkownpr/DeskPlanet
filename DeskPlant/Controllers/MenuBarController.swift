@@ -1,10 +1,11 @@
 import SwiftUI
 import AppKit
 
-class MenuBarController: ObservableObject {
+class MenuBarController: NSObject, ObservableObject {
     private var statusItem: NSStatusItem?
     private var popover: NSPopover?
     private var timer: Timer?
+    private var eventMonitor: Any?
 
     private let pomodoroTimer = PomodoroTimer.shared
     private let dataManager = DataManager.shared
@@ -14,19 +15,17 @@ class MenuBarController: ObservableObject {
     private var licenseActivationWindow: NSWindow?
     private var licenseInfoWindow: NSWindow?
 
-    init() {
+    override init() {
+        super.init()
+        
         setupStatusItem()
         setupPopover()
         startUpdatingIcon()
         observeNotifications()
         
-        // Sadece ilk kez başlatıldığında otomatik aç
-        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
-        if !hasLaunchedBefore {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-                self?.showPopover()
-            }
-            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+        // Her zaman başlangıçta popover'ı aç
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+            self?.showPopover()
         }
     }
 
@@ -47,6 +46,7 @@ class MenuBarController: ObservableObject {
         popover?.contentSize = NSSize(width: 320, height: 490)
         popover?.behavior = .transient  // Ekrana tıklayınca otomatik kapanır
         popover?.animates = true
+        popover?.delegate = self
         popover?.contentViewController = NSHostingController(
             rootView: PopoverView(
                 timer: pomodoroTimer,
@@ -117,12 +117,40 @@ class MenuBarController: ObservableObject {
                 // Behavior'ı her gösterimde .transient yap (dışarı tıklayınca kapansın)
                 popover.behavior = .transient
                 popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
+                
+                // Event monitor başlat - popover dışına tıklayınca kapat
+                startMonitoring()
             }
         }
     }
 
     private func closePopover() {
         popover?.performClose(nil)
+        stopMonitoring()
+    }
+    
+    // MARK: - Event Monitoring
+    private func startMonitoring() {
+        // Zaten monitor varsa temizle
+        stopMonitoring()
+        
+        // Global event monitor - tüm mouse click eventlerini dinle
+        eventMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
+            guard let self = self, let popover = self.popover, popover.isShown else { return }
+            
+            // Eğer tıklanan yer popover içi değilse, kapat
+            if let contentView = popover.contentViewController?.view,
+               !contentView.bounds.contains(contentView.convert(event.locationInWindow, from: nil)) {
+                self.closePopover()
+            }
+        }
+    }
+    
+    private func stopMonitoring() {
+        if let monitor = eventMonitor {
+            NSEvent.removeMonitor(monitor)
+            eventMonitor = nil
+        }
     }
 
     // MARK: - Icon Updates
@@ -211,8 +239,8 @@ class MenuBarController: ObservableObject {
         if pomodoroTimer.state == .idle {
             let item = NSMenuItem(
                 title: "button.startFocus".localized,
-                action: #selector(quickStartFocus),
-                keyEquivalent: "f"
+            action: #selector(quickStartFocus),
+            keyEquivalent: "f"
             )
             item.target = self
             menu.addItem(item)
@@ -284,7 +312,7 @@ class MenuBarController: ObservableObject {
         updateButtonIcon()
         updateContextMenu()
     }
-    
+
     @objc private func quickPause() {
         pomodoroTimer.pause()
         updateButtonIcon()
@@ -311,6 +339,18 @@ class MenuBarController: ObservableObject {
     // MARK: - Cleanup
     deinit {
         timer?.invalidate()
+        stopMonitoring()
         NotificationCenter.default.removeObserver(self)
+    }
+}
+
+// MARK: - NSPopoverDelegate
+extension MenuBarController: NSPopoverDelegate {
+    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
+        return false
+    }
+    
+    func popoverDidClose(_ notification: Notification) {
+        // Popover kapandığında temizlik yap
     }
 }

@@ -99,8 +99,8 @@ class PomodoroTimer: ObservableObject {
         
         // Sadece tam süre tamamlandıysa ödül ver
         if !isSkipped {
-            sessionsCompleted += 1
-            recordSession()
+        sessionsCompleted += 1
+        recordSession()
             // Water the plant - Sadece tam seans tamamlandığında!
             DataManager.shared.plantState.water()
         }

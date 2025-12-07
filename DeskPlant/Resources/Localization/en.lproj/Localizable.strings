@@ -180,6 +180,7 @@
 "license.error.emailMismatch" = "Email doesn't match the purchase email";
 "license.error.activationFailed" = "License activation failed";
 "license.error.activationLimit" = "This license key has reached the activation limit. Please deactivate it on another device from LemonSqueezy dashboard, or contact support.";
+"license.error.invalidLicenseOrEmail" = "Invalid license key or email address. Please check your purchase email and license key, then try again.";
 "license.error.invalidLicense" = "License key is invalid";
 "license.error.notActive" = "License status: %@";
 "license.error.noLicense" = "No license stored";

@@ -154,8 +154,11 @@
 "license.status.active" = "Aktiv";
 "license.status.expired" = "Abgelaufen";
 "license.status.invalid" = "Ungültig";
-"license.title" = "Lizenz";
+"license.title" = "Lizenzaktivierung";
+"license.section.title" = "Lizenz";
 "license.activate" = "Lizenz Aktivieren";
+"license.button.activate" = "Lizenz aktivieren";
+"license.button.deactivate" = "Lizenz deaktivieren";
 "license.deactivate" = "Lizenz Deaktivieren";
 "license.email" = "E-Mail";
 "license.key" = "Lizenzschlüssel";
@@ -166,15 +169,28 @@
 "license.currentStatus" = "Aktueller Status";
 "license.type" = "Lizenztyp";
 "license.activatedOn" = "Aktiviert am";
-"license.upgradeMessage" = "Upgrade auf Pro, um alle Funktionen freizuschalten";
+"license.upgradeMessage" = "Auf Pro upgraden";
 "license.features.title" = "Pro-Funktionen";
 "license.features.allPlants" = "Zugriff auf alle Pflanzentypen";
 "license.features.customTimer" = "Timer-Einstellungen anpassen";
 "license.features.fullStats" = "Vollständige Statistiken";
 "license.success" = "Lizenz erfolgreich aktiviert!";
+"license.success.title" = "Erfolg!";
+"license.success.message" = "Ihre Lizenz wurde erfolgreich aktiviert";
+"license.error.title" = "Aktivierung fehlgeschlagen";
 "license.deactivateSuccess" = "Lizenz erfolgreich deaktiviert";
 "license.deactivateConfirm" = "Sind Sie sicher, dass Sie Ihre Lizenz deaktivieren möchten?";
-"license.restrictedFeature" = "Diese Funktion erfordert eine Pro-Lizenz";
+"license.restrictedFeature" = "Diese Funktion erfordert eine Pro-Lizenz. Aktivieren Sie für 6 Pflanzen und Timer-Einstellungen!";
+"license.info.trial" = "Kostenlos: Nur 1 Pflanze • Aktivieren für 6 Pflanzen + Timer-Einstellungen";
+"license.intro.title" = "Aktivieren Sie Ihre Lizenz";
+"license.intro.description" = "Geben Sie Ihren Lizenzschlüssel und Ihre E-Mail ein, um alle Premium-Funktionen freizuschalten";
+"license.field.key" = "Lizenzschlüssel";
+"license.field.email" = "E-Mail-Adresse";
+"license.field.device" = "Gerät";
+"license.field.activated" = "Aktiviert";
+"license.help.text" = "Verwenden Sie die E-Mail-Adresse aus Ihrer Kaufbestätigung";
+"license.link.purchase" = "Lizenz kaufen";
+"license.activated.title" = "Lizenz aktiv";
 
 /* License Errors */
 "license.error.invalidEmail" = "Bitte geben Sie eine gültige E-Mail-Adresse ein";
@@ -182,6 +198,17 @@
 "license.error.notActivated" = "Lizenz ist nicht aktiviert";
 "license.error.network" = "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung";
 "license.error.unknown" = "Ein unbekannter Fehler ist aufgetreten";
+"license.error.invalidURL" = "Ungültige API-URL";
+"license.error.invalidResponse" = "Ungültige Serverantwort";
+"license.error.serverError" = "Serverfehler (Code: %d)";
+"license.error.invalidProduct" = "Dieser Lizenzschlüssel ist nicht gültig für DeskPlant";
+"license.error.emailMismatch" = "E-Mail stimmt nicht mit der Kauf-E-Mail überein";
+"license.error.activationFailed" = "Lizenzaktivierung fehlgeschlagen";
+"license.error.activationLimit" = "Dieser Lizenzschlüssel hat das Aktivierungslimit erreicht. Bitte deaktivieren Sie ihn auf einem anderen Gerät über das LemonSqueezy-Dashboard oder wenden Sie sich an den Support.";
+"license.error.invalidLicenseOrEmail" = "Ungültiger Lizenzschlüssel oder E-Mail-Adresse. Bitte überprüfen Sie Ihre Kauf-E-Mail und Ihren Lizenzschlüssel und versuchen Sie es erneut.";
+"license.error.invalidLicense" = "Lizenzschlüssel ist ungültig";
+"license.error.notActive" = "Lizenzstatus: %@";
+"license.error.noLicense" = "Keine Lizenz gespeichert";
 
 /* Purchase */
 "license.purchase" = "Lizenz kaufen";
