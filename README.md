@@ -51,12 +51,34 @@ DeskPlant is **free to use** with basic features. Unlock premium features with a
 - macOS 13.0 (Ventura) or later
 - Universal Binary (Intel + Apple Silicon)
 
-#### Download
+#### Download & Installation
 1. Download the latest DMG from [Releases](https://github.com/unkownpr/DeskPlanet-/releases)
 2. Open the DMG file
 3. Drag `DeskPlant.app` to Applications folder
-4. Launch from Applications (right-click → Open on first launch)
-5. Grant notification permissions
+4. **Important**: First launch requires special steps (see below ⚠️)
+
+#### ⚠️ First Launch (macOS Security)
+
+Since the app is not notarized by Apple, macOS will show a "damaged" warning. This is normal! Follow these steps:
+
+**Method 1 - Terminal (Recommended):**
+```bash
+xattr -cr /Applications/DeskPlant.app
+```
+Then open the app normally.
+
+**Method 2 - Right-click:**
+1. Right-click on `DeskPlant.app` in Applications
+2. Select "Open"
+3. Click "Open" in the security dialog
+
+**Method 3 - System Settings:**
+1. Try to open the app (you'll get an error)
+2. Go to System Settings → Privacy & Security
+3. Click "Open Anyway" next to the DeskPlant warning
+4. Click "Open" to confirm
+
+**You only need to do this once!** After the first launch, the app will open normally.
 
 ### 🚀 Quick Start
 

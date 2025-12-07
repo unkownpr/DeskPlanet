@@ -51,12 +51,34 @@ DeskPlant **ücretsiz** olarak temel özelliklerle kullanılabilir. Premium öze
 - macOS 13.0 (Ventura) veya üzeri
 - Universal Binary (Intel + Apple Silicon)
 
-#### İndirme
+#### İndirme ve Kurulum
 1. [Releases](https://github.com/unkownpr/DeskPlanet-/releases) sayfasından en son DMG dosyasını indirin
 2. DMG dosyasını açın
 3. `DeskPlant.app` dosyasını Applications klasörüne sürükleyin
-4. Applications'dan başlatın (ilk açılışta sağ tık → Aç)
-5. Bildirim izinlerini verin
+4. **Önemli**: İlk açılış için özel adımlar gereklidir (aşağıya bakın ⚠️)
+
+#### ⚠️ İlk Açılış (macOS Güvenliği)
+
+Uygulama Apple tarafından notarize edilmediği için macOS "hasarlı" uyarısı gösterecektir. Bu normaldir! Şu adımları izleyin:
+
+**Yöntem 1 - Terminal (Önerilen):**
+```bash
+xattr -cr /Applications/DeskPlant.app
+```
+Sonra uygulamayı normal şekilde açın.
+
+**Yöntem 2 - Sağ tık:**
+1. Applications klasöründe `DeskPlant.app`'e sağ tıklayın
+2. "Aç" seçeneğini seçin
+3. Güvenlik diyaloğunda "Aç"a tıklayın
+
+**Yöntem 3 - Sistem Ayarları:**
+1. Uygulamayı açmayı deneyin (hata alacaksınız)
+2. Sistem Ayarları → Gizlilik ve Güvenlik'e gidin
+3. DeskPlant uyarısının yanındaki "Yine de Aç"a tıklayın
+4. Onaylamak için "Aç"a tıklayın
+
+**Bunu sadece bir kez yapmanız yeterli!** İlk açılıştan sonra uygulama normal şekilde açılacaktır.
 
 ### 🚀 Hızlı Başlangıç
 
