@@ -1,0 +1,117 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Triggers on version tags like v1.0.0, v1.1.0, etc.
+
+jobs:
+  build:
+    name: Build macOS App
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+      
+      - name: Build Release
+        run: |
+          xcodebuild -project DeskPlant.xcodeproj \
+            -scheme DeskPlant \
+            -configuration Release \
+            -derivedDataPath build/DerivedData \
+            clean build \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+      
+      - name: Create DMG
+        run: |
+          # Create a temporary directory for DMG contents
+          mkdir -p dmg_temp
+          cp -r build/DerivedData/Build/Products/Release/DeskPlant.app dmg_temp/
+          
+          # Create symbolic link to Applications folder
+          ln -s /Applications dmg_temp/Applications
+          
+          # Create DMG
+          hdiutil create -volname "DeskPlant" \
+            -srcfolder dmg_temp \
+            -ov -format UDZO \
+            DeskPlant-v${{ steps.version.outputs.VERSION }}.dmg
+          
+          # Clean up
+          rm -rf dmg_temp
+      
+      - name: Create ZIP archive
+        run: |
+          cd build/DerivedData/Build/Products/Release/
+          zip -r ../../../../../DeskPlant-v${{ steps.version.outputs.VERSION }}.zip DeskPlant.app
+      
+      - name: Calculate checksums
+        run: |
+          shasum -a 256 DeskPlant-v${{ steps.version.outputs.VERSION }}.dmg > checksums.txt
+          shasum -a 256 DeskPlant-v${{ steps.version.outputs.VERSION }}.zip >> checksums.txt
+          cat checksums.txt
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            DeskPlant-v${{ steps.version.outputs.VERSION }}.dmg
+            DeskPlant-v${{ steps.version.outputs.VERSION }}.zip
+            checksums.txt
+          body: |
+            ## 🌱 DeskPlant v${{ steps.version.outputs.VERSION }}
+            
+            ### 📥 Installation
+            
+            **Option 1: DMG (Recommended)**
+            1. Download `DeskPlant-v${{ steps.version.outputs.VERSION }}.dmg`
+            2. Open the DMG file
+            3. Drag DeskPlant.app to the Applications folder
+            4. Right-click and select "Open" on first launch
+            
+            **Option 2: ZIP**
+            1. Download `DeskPlant-v${{ steps.version.outputs.VERSION }}.zip`
+            2. Extract the ZIP file
+            3. Move DeskPlant.app to Applications folder
+            4. Right-click and select "Open" on first launch
+            
+            ### ✨ Features
+            - 🎯 Pomodoro Timer (25-5-15)
+            - 🌱 Digital Plant Growth System
+            - 🌍 4 Languages (EN, TR, FR, DE)
+            - 📊 Statistics & Analytics
+            - ⌨️ Keyboard Shortcuts
+            - 🚀 Launch at Login
+            - 🎨 Dark Mode Support
+            
+            ### 📋 Requirements
+            - macOS 13.0 (Ventura) or later
+            - Apple Silicon (M1/M2/M3) or Intel processor
+            
+            ### 🔐 Security Note
+            This app is not signed with an Apple Developer certificate. You'll need to:
+            1. Right-click the app and select "Open" (first launch only)
+            2. Or go to System Settings > Privacy & Security and allow the app
+            
+            ### 📝 Checksums
+            See `checksums.txt` for SHA-256 verification
+            
+            ---
+            **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ github.event.before }}...${{ github.ref_name }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
